@@ -1,7 +1,10 @@
-require("dotenv").config();
+import 'dotenv/config';
 
-const express = require("express");
-const cors = require("cors");
+import express from 'express'
+import cors from 'cors'
+
+import geminiService from './services/geminiService.js';
+
 
 const app = express();
 
@@ -15,13 +18,14 @@ const PORT = process.env.PORT || 5000;
  PostgreSQL Connection
 ==============================
 */
-const pool = require("./config/db");
+import pool from './config/db.js';
 
 /*
 ==============================
  Test Database Connection
 ==============================
 */
+
 
 async function connectDB() {
     try {
@@ -46,14 +50,35 @@ app.get("/", (req, res) => {
     });
 });
 
+async function testEmbedding() {
+    try {
+
+        const embedding = await geminiService.generateEmbedding(
+            "What is Artificial Intelligence?"
+        );
+
+        console.log("✅ Embedding Generated");
+        console.log("Dimensions:", embedding.length);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+}
 /*
 ==============================
  Start Server
 ==============================
 */
+const response = await geminiService.generateResponse(
+    "What is Artificial Intelligence?"
+);
 
+console.log(response);
 app.listen(PORT, async () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 
     await connectDB();
+    await testEmbedding();
 });
