@@ -7,6 +7,7 @@ import { logger, pinoHttpMiddleware } from "./utils/logger.js";
 import { rateLimiter } from "./middleware/rateLimiter.js";
 import chatRoutes from "./routes/chatRoutes.js";
 import healthRoute from "./routes/healthRoute.js";
+import metricsRoutes from "./routes/metricsRoutes.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
@@ -23,7 +24,7 @@ app.use(rateLimiter);
 
 // 4. Request parsing
 app.use(express.json());
-
+app.use("/api/metrics", metricsRoutes);
 // Home Route
 app.get("/", (req, res) => {
   res.json({

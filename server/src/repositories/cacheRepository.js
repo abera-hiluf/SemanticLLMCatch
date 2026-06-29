@@ -53,8 +53,21 @@ async function incrementMetrics(isHit) {
   await pool.query(query, [hits, misses, saved]);
 }
 
+// Get cache usage metrics
+async function getMetrics() {
+  const query = `
+    SELECT total_requests, cache_hits, cache_misses, api_calls_saved, updated_at
+    FROM cache_metrics
+    WHERE id = 1
+  `;
+  const { rows } = await pool.query(query);
+  return rows[0] || null;
+}
+
 export default {
   findSimilarCache,
   saveCache,
   incrementMetrics,
+  getMetrics,
 };
+
