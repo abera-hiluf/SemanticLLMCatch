@@ -1,0 +1,26 @@
+.home-page-root {
+  min-height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+}
+
+.app-branding-header {
+  margin-bottom: 2.25rem;
+  text-align: left;
+}
+
+.app-title-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--heading);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle-description {
+  font-size: 0.95rem;
+  color: var(--body);
+  line-height: 1.5;
+  max-width: 680px;
+}

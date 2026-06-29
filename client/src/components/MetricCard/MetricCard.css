@@ -1,0 +1,51 @@
+.metric-card-container {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border-top: 4px solid var(--border); /* Fallback */
+}
+
+.metric-card-container:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: rgba(17, 24, 39, 0.1);
+}
+
+.metric-card-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--body);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.metric-card-value {
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: var(--heading);
+  font-family: var(--font-mono);
+  line-height: 1.2;
+}
+
+/* Color Accent Bars (border-top) */
+.metric-card-container.normal {
+  border-top: 4px solid var(--purple);
+}
+
+.metric-card-container.primary {
+  border-top: 4px solid var(--primary);
+}
+
+.metric-card-container.success {
+  border-top: 4px solid var(--success);
+}
+
+.metric-card-container.warning {
+  border-top: 4px solid var(--warning);
+}
