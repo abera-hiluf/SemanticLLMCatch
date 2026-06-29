@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo/logo.png" width="120">
+  <img src="assets/logo/logo.png" width="130">
 </p>
 
 <h1 align="center">SemanticCache</h1>
@@ -11,50 +11,87 @@ AI Infrastructure Tool for Intelligent Semantic Response Caching
 <p align="center">
 Reduce AI response latency and API costs using semantic similarity search powered by Gemini Embeddings and PostgreSQL pgvector.
 </p>
+
 <p align="center">
-
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-
-![Express](https://img.shields.io/badge/Express.js-000000?logo=express)
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql)
-
-![Gemini](https://img.shields.io/badge/Gemini-2.5_Flash-4285F4)
-
-![pgvector](https://img.shields.io/badge/pgvector-Vector_Search-success)
-
-![License](https://img.shields.io/badge/License-MIT-green)
-
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white">
+  <img src="https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white">
+  <img src="https://img.shields.io/badge/pgvector-Vector_Search-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
 </p>
+
+---
+
+##  Live Demo
+
+**Frontend**
+
+https://semantic-llm-catch.vercel.app/
+
+**Backend API**
+
+https://semantic-cache-api.onrender.com
+
+---
+
+## Problem
+
+Large Language Models (LLMs) frequently receive repeated or semantically similar prompts. Traditional caching techniques only match identical text, meaning similar requests still trigger expensive API calls.
+
+As AI applications scale, this results in:
+
+* Higher API costs
+* Increased response latency
+* Unnecessary repeated computation
+* Poor resource utilization
+
+---
+
+## Why SemanticCache?
+
+SemanticCache addresses this challenge by comparing the **meaning** of prompts instead of their exact wording.
+
+Using **Gemini Embeddings** together with **PostgreSQL pgvector**, the application converts prompts into vector embeddings and performs semantic similarity search.
+
+If a similar prompt already exists, the cached response is returned instantly instead of calling the LLM again.
+
+This approach significantly reduces latency, lowers API usage, and improves the overall efficiency of AI-powered applications.
+
+---
+
+## ✨ Features
+
+| Feature               | Description                                                |
+| --------------------- | ---------------------------------------------------------- |
+| Semantic Search       | Finds semantically similar prompts using vector embeddings |
+| Intelligent Caching   | Returns cached responses for similar requests              |
+| Gemini Flash          | Generates responses only on cache misses                   |
+| Gemini Embeddings     | Converts prompts into vector representations               |
+| PostgreSQL + pgvector | Stores and searches embeddings efficiently                 |
+| Cache Metrics         | Tracks hits, misses and API calls saved                    |
+| React Dashboard       | Modern interface for interacting with the cache            |
+| REST API              | Express backend exposing chat and metrics endpoints        |
+
+---
 
 ## 📸 Screenshots
-<h3>Home</h3>
+
+### Home
 
 <p align="center">
-<img src="assets/screenshots/home.jpg" width="900">
+  <img src="assets/screenshots/home.jpg" width="900">
 </p>
 
-<h3>Performance Overview</h3>
+### Performance Overview
 
 <p align="center">
-<img src="assets/screenshots/metrics.jpg" width="900">
+  <img src="assets/screenshots/metrics.jpg" width="900">
 </p>
 
-## 🚀 Live Demo
-
-Frontend: https://semantic-llm-catch.vercel.app/
-
-## 🚨 Problem
-
-Large Language Models receive many repeated or semantically similar prompts. Traditional caching only matches identical text, causing unnecessary API calls, higher response latency, and increased operational costs.
-
-As AI applications scale, these repeated requests become expensive and inefficient.
-Backend API: https://semantic-cache-api.onrender.com
-## 💡 Why SemanticCache?
-
-SemanticCache solves this problem by using Gemini Embeddings and PostgreSQL pgvector to compare the semantic meaning of prompts instead of exact text.
-
-If a similar prompt already exists, the cached response is returned instantly, reducing response time and avoiding unnecessary LLM requests.
+---
 
 ## ⚙️ Installation
 
@@ -62,7 +99,7 @@ If a similar prompt already exists, the cached response is returned instantly, r
 # Clone the repository
 git clone https://github.com/abera-hiluf/SemanticLLMCatch.git
 
-# Navigate into the project
+# Navigate to the project
 cd SemanticLLMCatch
 
 # Install backend dependencies
@@ -73,11 +110,27 @@ npm install
 cd ../client
 npm install
 
-# Start the backend
+# Start backend
 cd ../server
 npm run dev
 
-# Start the frontend
+# Start frontend
 cd ../client
 npm run dev
 ```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Abera Hiluf Teshale**
+
+AI & Machine Learning Student
+
+GitHub: https://github.com/abera-hiluf
