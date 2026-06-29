@@ -10,9 +10,10 @@ function Home() {
     <div className="home-page-root">
       <main className="container">
         <header className="app-branding-header">
-          <h1 className="app-title-text">Semantic LLM Cache</h1>
+          <span className="app-infrastructure-badge">AI Infrastructure</span>
+          <h1 className="app-title-text">SemanticCache</h1>
           <p className="app-subtitle-description">
-            Reduce AI response latency using semantic similarity search powered by Gemini embeddings and PostgreSQL pgvector.
+            Accelerate AI applications using semantic similarity search powered by Gemini embeddings and PostgreSQL pgvector.
           </p>
         </header>
         <Dashboard />

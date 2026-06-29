@@ -101,6 +101,7 @@ function Dashboard() {
           <MetricCard
             label="Total Requests"
             value={metrics.total_requests}
+            variant="primary"
           />
           <MetricCard
             label="Cache Hits"
@@ -115,12 +116,12 @@ function Dashboard() {
           <MetricCard
             label="Hit Rate"
             value={metrics.hit_rate}
-            variant="primary"
+            variant="purple"
           />
           <MetricCard
             label="Saved API Calls"
             value={metrics.api_calls_saved}
-            variant="success"
+            variant="teal"
           />
         </div>
       </section>

@@ -4,8 +4,8 @@
 }
 
 .dashboard-section {
-  padding-top: 2.25rem;
-  margin-top: 2.25rem;
+  padding-top: 2.5rem; /* Increased spacing between sections */
+  margin-top: 2.5rem;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -19,9 +19,11 @@
 }
 
 .section-title {
-  font-size: 1rem !important;
-  font-weight: 600;
-  color: var(--heading);
+  font-size: 0.95rem !important;
+  font-weight: 500; /* Cleaner visual weight (avoid making everything bold) */
+  color: var(--body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: 0.25rem !important;
 }
 
@@ -45,7 +47,7 @@
 .dashboard-responses-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem; /* More comfortable spacing between cards */
 }
 
 @media (max-width: 900px) {

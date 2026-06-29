@@ -53,25 +53,24 @@
 }
 
 .prompt-submit-btn {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
   color: #FFFFFF;
   font-weight: 500;
-  border: 1px solid transparent;
+  border: none;
   border-radius: var(--radius);
-  padding: 0.5rem 1.25rem;
+  padding: 0.55rem 1.5rem;
   font-size: 0.875rem;
   transition: var(--transition);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 4px 0 rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 80px;
+  min-width: 85px;
 }
 
 .prompt-submit-btn:hover:not(:disabled) {
-  background-color: var(--primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.12), 0 2px 4px -1px rgba(37, 99, 235, 0.08);
+  box-shadow: 0 4px 8px 0 rgba(37, 99, 235, 0.18), 0 1px 3px 0 rgba(37, 99, 235, 0.15);
 }
 
 .prompt-submit-btn:active:not(:disabled) {

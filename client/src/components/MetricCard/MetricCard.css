@@ -1,7 +1,7 @@
 .metric-card-container {
   background-color: var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg); /* Larger border radius */
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
 .metric-card-container:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
-  border-color: rgba(17, 24, 39, 0.1);
+  border-color: rgba(17, 24, 39, 0.08);
 }
 
 .metric-card-label {
@@ -33,19 +33,38 @@
   line-height: 1.2;
 }
 
-/* Color Accent Bars (border-top) */
-.metric-card-container.normal {
-  border-top: 4px solid var(--purple);
-}
-
+/* Accent top-borders & color mapping for numbers */
 .metric-card-container.primary {
   border-top: 4px solid var(--primary);
+}
+.metric-card-container.primary .metric-card-value {
+  color: var(--primary);
 }
 
 .metric-card-container.success {
   border-top: 4px solid var(--success);
 }
+.metric-card-container.success .metric-card-value {
+  color: var(--success);
+}
 
 .metric-card-container.warning {
   border-top: 4px solid var(--warning);
+}
+.metric-card-container.warning .metric-card-value {
+  color: var(--warning);
+}
+
+.metric-card-container.purple {
+  border-top: 4px solid var(--purple);
+}
+.metric-card-container.purple .metric-card-value {
+  color: var(--purple);
+}
+
+.metric-card-container.teal {
+  border-top: 4px solid var(--teal);
+}
+.metric-card-container.teal .metric-card-value {
+  color: var(--teal);
 }

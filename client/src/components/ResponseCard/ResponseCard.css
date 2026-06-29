@@ -2,7 +2,7 @@
   background-color: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.25rem 1.5rem;
+  padding: 1.75rem 2rem; /* Increased padding */
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 .response-container-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
-  border-color: rgba(17, 24, 39, 0.1);
+  border-color: rgba(17, 24, 39, 0.08);
 }
 
 .query-header-row {
@@ -37,6 +37,7 @@
   font-weight: 500;
   color: var(--heading);
   margin: 0;
+  line-height: 1.4;
 }
 
 .response-body-block {
@@ -54,7 +55,7 @@
   white-space: pre-wrap;
   word-break: break-all;
   overflow-x: auto;
-  line-height: 1.6;
+  line-height: 1.65; /* Increased line spacing */
   margin: 0;
 }
 
