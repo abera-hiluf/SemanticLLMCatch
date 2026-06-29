@@ -64,10 +64,38 @@ async function getMetrics() {
   return rows[0] || null;
 }
 
+// Find similar prompt in cache using Cosine similarity
+async function findSimilarPrompt(embeddingVector, threshold = 0.82) {
+  const vectorStr = formatVector(embeddingVector);
+  const query = `
+    SELECT id, prompt, response, 1 - (embedding <=> $1::vector) AS similarity 
+    FROM prompt_cache 
+    WHERE 1 - (embedding <=> $1::vector) >= $2
+    ORDER BY similarity DESC 
+    LIMIT 1
+  `;
+  const { rows } = await pool.query(query, [vectorStr, threshold]);
+  return rows[0] || null;
+}
+
+// Save a prompt response to cache
+async function savePrompt({ prompt, response, embedding, embeddingModel = "gemini-embedding-001" }) {
+  const vectorStr = formatVector(embedding);
+  const query = `
+    INSERT INTO prompt_cache (prompt, response, embedding, embedding_model, created_at)
+    VALUES ($1, $2, $3::vector, $4, NOW())
+    RETURNING *
+  `;
+  const { rows } = await pool.query(query, [prompt, response, vectorStr, embeddingModel]);
+  return rows[0];
+}
+
 export default {
   findSimilarCache,
   saveCache,
   incrementMetrics,
   getMetrics,
+  findSimilarPrompt,
+  savePrompt,
 };
 

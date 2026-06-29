@@ -6,9 +6,15 @@ async function chat(req, res, next) {
     const result = await chatService.chat(prompt);
 
     return res.status(200).json({
+
       success: true,
+
       source: result.source,
-      response: result.response,
+
+      latency: result.latency,
+
+      response: result.response
+
     });
   } catch (error) {
     next(error);
