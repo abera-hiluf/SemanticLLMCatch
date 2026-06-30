@@ -2,7 +2,7 @@
   <img src="assets/logo/logo.png" width="130">
 </p>
 
-<h1 align="center">SemanticCache</h1>
+<h1 align="center">SemanticCacheAI</h1>
 
 <p align="center">
 AI Infrastructure Tool for Intelligent Semantic Response Caching
